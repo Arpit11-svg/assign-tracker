@@ -18,7 +18,7 @@ public class Assignment {
     private String title;
 
     @Column(columnDefinition = "TEXT")  // important for long questions
-    private String question;
+    private String task;
 
     private LocalDateTime deadline;
 

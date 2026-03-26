@@ -5,19 +5,30 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "submissions")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(
+        uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "assignment_id"})
+)
 public class Submission {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long assignmentId;
+    // MANY submissions by ONE user
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    private Long studentId;
+    // MANY submissions for → ONE assignment
+    @ManyToOne
+    @JoinColumn(name = "assignment_id")
+    private Assignment assignment;
 
-    private LocalDateTime submittedAt;
+    // content submitted by student
+    private String content;
+
+    private LocalDateTime submissionTime;
 }
