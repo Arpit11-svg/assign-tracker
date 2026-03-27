@@ -31,4 +31,7 @@ public class Submission {
     private String content;
 
     private LocalDateTime submissionTime;
+
+    @Enumerated(EnumType.STRING)
+    private SubmissionStatus status;
 }
