@@ -19,7 +19,7 @@ public class Submission {
 
     // MANY submissions by ONE user
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id") //means create a column "user_id" in this table, which stores foreign key of user
     private User user;
 
     // MANY submissions for → ONE assignment

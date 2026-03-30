@@ -1,6 +1,5 @@
 package com.arpit.assignment_tracker.controller;
 
-
 import com.arpit.assignment_tracker.entity.Submission;
 import com.arpit.assignment_tracker.service.SubmissionService;
 import org.springframework.beans.factory.annotation.Autowired;
